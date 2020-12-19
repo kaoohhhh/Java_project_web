@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Book Room</title>
+    </h:head>
+    <h:body style="background-color: #e4f4ff">
+        <center>
+            <h1 style="color:cornflowerblue" >Book Room Project</h1>
+            <h:form>
+                <h:commandButton value="Login" action="#{mainIn.login()}"/>
+                <p></p>
+                <h:commandButton value="Check room from date" action="#{mainIn.check()}"/>
+                <p></p>
+                <h:commandButton value="Check from room today" action="#{mainIn.today()}"/>
+                <p></p>
+                <h:commandButton value="Unbook" action="#{mainIn.unbook()}"/>
+                <p></p>
+                <h:commandButton value="Manage" action="#{mainIn.manage()}"/>
+            </h:form>
+        </center>
+    </h:body>
+</html>
+

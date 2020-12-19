@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Booking Room</title>
+    </h:head>
+    <h:body style="background-color: #e4f4ff"> 
+        <center> 
+        <h1 style="color: #50748c" >Unbooking Room</h1>
+        <br />
+        <h:form>
+                
+            <h:panelGrid columns="3" >
+               <h:outputLabel value="Name"/>
+               <h:inputText id ="name" required="true" requiredMessage="Name is required"
+                            validatorMessage="Name must have 1 to 10 chars" value="#{unbook.name}">
+               <f:validateLength minimum="1" maximum="10" />
+               </h:inputText>
+               <h:message for="name" style="color:red"/>
+               
+               <h:outputLabel value="Room ID"/> 
+               <h:inputText id ="ID" required="true" requiredMessage="ID is required"
+                            value="#{unbook.ID}"/>
+               <h:message for="ID" style="color:red"/>
+
+               <h:outputLabel value="Phone"/> 
+               <h:inputText id ="phone" required="true" requiredMessage="Phone is required"
+                            value="#{unbook.phone}"/>       
+               <h:message for="phone" style="color:red"/>
+
+               <h:outputLabel value="Date check-in"/>
+               <h:inputText value="#{unbook.checkIn}" required="true" requiredMessage="Date is required"
+                            id="checkIn"/>
+               <h:message for="checkIn" style="color:red"/>
+               
+               <h:outputLabel value="Date check-out"/>
+               <h:inputText value="#{unbook.checkOut}" required="true" requiredMessage="Date is required"
+                            id="checkOut"/>
+               <h:message for="checkOut" style="color:red"/>
+               
+            </h:panelGrid>
+            <br/>
+            <h:outputLabel style="color:red" value="Date write in term YYYY-MM-DD"/>
+            
+                <br />
+                <br />
+                <h:panelGrid columns="2">
+                <h:commandButton value="Unbook"/>
+                <h:commandButton value="Back" action="#{unbook.back()}"/>
+                </h:panelGrid>
+                <br />
+                <h:outputText escape="false" style="color:red" value="#{unbook.waring}"/>
+                
+                <h:graphicImage name="room.jpg" library="image" />
+        </h:form>
+        </center>
+    </h:body>
+</html>
+

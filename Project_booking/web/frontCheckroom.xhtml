@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <h:head>
+        <title>Check Room</title>
+        
+    </h:head>
+    <h:body style="background-color:  #e4f4ff">
+        <h:form id = "checkroom">
+        <center>
+            <h3 style = "Color : orange">Check Room</h3>
+            <h:panelGrid columns="2">
+                <h4 style = "color: green">Check in:</h4> 
+                <h:inputText value="#{backCheckRoom.dateIn}" id = "dateIn" ></h:inputText>       
+                <h4 style = "color: red"> Check Out:</h4>
+                <h:inputText value="#{backCheckRoom.dateOut}" id = "dateOut"></h:inputText> 
+            </h:panelGrid>
+            
+            <h:outputLabel value="Input date in term YYYY-MM-DD"/>
+            <br />
+            <br />
+                <!--Use button-->
+            <h:panelGrid columns="2">
+                <h:commandButton id = "search" value="search"/>
+                <h:commandButton action = "#{backCheckRoom.book()}" value="Book room"/>
+                
+            </h:panelGrid>
+            <br />
+            <h:commandLink action="index" value = "Back"/>
+            <h:outputText escape="false" style="color:darkred" value="#{backCheckRoom.checkroom}"/>
+
+            
+        </center>
+        </h:form>
+    </h:body>
+</html>
+
